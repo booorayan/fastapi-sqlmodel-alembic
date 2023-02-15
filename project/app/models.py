@@ -1,9 +1,11 @@
 from sqlmodel import SQLModel, Field
+from typing import Optional
 
 
 class SongBase(SQLModel):
     name: str
     artist: str
+    year: Optional[int] = None
 
 
 class Song(SongBase, table=True):
